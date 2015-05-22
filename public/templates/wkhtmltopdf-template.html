@@ -1,0 +1,67 @@
+﻿<a class="expandable-header"><i class="glyphicon glyphicon-sm glyphicon-file"></i>wkhtmltopdf<b class="caret caret-right" {{if ~isFilled()}}style="color: green"{{else}}{{/if}}></b></a>
+<div class="expandable-body properties" style="display: none">
+    <span class="side-title">Paper size</span>
+    <div class="btn-group dropdown" data-binding="pageSize">
+        <button class="btn btn-xs dropdown-button" data-value="{{:pageSize}}">{{:pageSize}}</button>
+        <button class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a data-value="A4">A4</a></li>
+            <li><a data-value="A3">A3</a></li>
+            <li><a data-value="A5">A5</a></li>
+            <li><a data-value="Legal">Legal</a></li>
+            <li><a data-value="Letter">Letter</a></li>
+            <li><a data-value="Tabloid">Tabloid</a></li>
+        </ul>
+    </div>
+
+    <span class="side-title">Page width</span>
+    <input type="text" class="form-control area-mini" placeholder="600px" name="pageWidth" value="{{:pageWidth}}">
+
+    <span class="side-title">Page height</span>
+    <input type="text" class="form-control area-mini" placeholder="600px" name="pageHeight" value="{{:pageHeight}}">
+
+    <span class="side-title">Orientation</span>
+    <div class="btn-group dropdown" data-binding="orientation">
+        <button class="btn btn-xs dropdown-button" data-value="{{:orientation}}">{{:orientation}}</button>
+        <button class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a data-value="portrait">Portrait</a></li>
+            <li><a data-value="landscape">Landscape</a></li>
+        </ul>
+    </div>
+
+    <span class="side-title">Margin bottom</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="marginBottom" value="{{:marginBottom}}">
+    <span class="side-title">Margin left</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="marginLeft" value="{{:marginLeft}}">
+    <span class="side-title">Margin right</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="marginRight" value="{{:marginRight}}">
+    <span class="side-title">Margin top</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="marginTop" value="{{:marginTop}}">
+
+    <span class="side-title">Header height in mm</span>
+    <input type="text" class="form-control area-mini" placeholder="10" name="headerHeight" value="{{:headerHeight}}">
+    <span class="side-title">Header</span>
+    <textarea class="form-control side-textarea" placeholder="header content, !!!include <!DOCTYPE html>!!!" name="header">{{:header}}</textarea>
+    <span class="side-title">Footer height in mm</span>
+    <input type="text" class="form-control area-mini" placeholder="10" name="footerHeight" value="{{:footerHeight}}">
+    <span class="side-title">Footer</span>
+    <textarea class="form-control side-textarea" placeholder="footer content, !!!include <!DOCTYPE html>!!!" name="footer">{{:footer}}</textarea>
+
+
+    <span class="side-title">Table Of Contents</span>
+    <input type="checkbox" name="toc" checked="checked"/>
+
+    <span class="side-title">TOC header text</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="tocHeaderText" value="{{:tocHeaderText}}">
+
+    <span class="side-title">TOC level indentation</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="tocLevelIndentation" value="{{:tocLevelIndentation}}">
+
+    <span class="side-title">TOC text size shrink</span>
+    <input type="text" class="form-control area-mini" placeholder="10mm" name="tocTextSizeShrink" value="{{:tocTextSizeShrink}}">
+</div>

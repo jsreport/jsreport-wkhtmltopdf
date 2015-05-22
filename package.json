@@ -1,0 +1,38 @@
+{
+  "name": "jsreport-wkhtmltopdf",
+  "version": "0.0.1",
+  "keywords": [
+    "jsreport",
+    "wkhtmltopdf",
+    "extension"
+  ],
+  "description": "jsreport recipe rendering pdf using wkhtmltopdf",
+  "homepage": "https://github.com/jsreport/jsreport-wkhtmltopdf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsreport/jsreport-wkhtmltopdf.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jan Blaha",
+    "email": "jan.blaha@hotmail.com",
+    "url": "http://janblaha.net"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec test"
+  },
+  "dependencies": {
+    "q": "1.2.0",
+    "q-io": "1.12.0",
+    "uuid": "2.0.1",
+    "mkdirp": "0.5.0",
+    "node.extend": "1.1.3",
+    "wkhtmltopdf-installer" : "0.1.2"
+  },
+  "devDependencies": {
+    "jsreport": "~0.5.0",
+    "mocha": "2.2.1",
+    "mongodb": "2.0.26"
+  }
+}
