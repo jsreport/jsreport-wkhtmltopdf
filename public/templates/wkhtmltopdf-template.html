@@ -1,5 +1,8 @@
 ﻿<a class="expandable-header"><i class="glyphicon glyphicon-sm glyphicon-file"></i>wkhtmltopdf<b class="caret caret-right" {{if ~isFilled()}}style="color: green"{{else}}{{/if}}></b></a>
 <div class="expandable-body properties" style="display: none">
+    <span class="side-title">Metadata - title</span>
+    <input type="text" class="form-control area-mini" placeholder="document title" name="title" value="{{:title}}">
+
     <span class="side-title">Paper size</span>
     <div class="btn-group dropdown" data-binding="pageSize">
         <button class="btn btn-xs dropdown-button" data-value="{{:pageSize}}">{{:pageSize}}</button>
