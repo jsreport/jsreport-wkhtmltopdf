@@ -27,7 +27,7 @@
     "toner-wkhtmltopdf" : "0.1.0"
   },
   "devDependencies": {
-    "jsreport": "0.6.4",
+    "jsreport": "0.7.0",
     "mocha": "2.2.1"
   }
 }
