@@ -1,4 +1,4 @@
-define(["jquery", "app", "marionette", "backbone", "underscore", "core/view.Base", "core/basicModel"],
+define(["jquery", "app", "marionette", "backbone", "underscore", "core/view.base", "core/basicModel"],
     function($, app, Marionette, Backbone, _, ViewBase, ModelBase) {
 
         var TemplateView = ViewBase.extend({
