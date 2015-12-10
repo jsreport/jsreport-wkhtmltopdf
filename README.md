@@ -9,6 +9,7 @@
 ##Installation
 
 > **npm install jsreport-wkhtmltopdf**
+
 ##Usage
 To use `recipe` in for template rendering set `template.recipe=phantom-wkhtmltopdf` in the rendering request.
 
