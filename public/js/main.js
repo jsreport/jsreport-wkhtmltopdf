@@ -83,8 +83,10 @@ define(["jquery", "app", "marionette", "backbone", "underscore", "core/view.base
                     var model = new Model();
                     model.setTemplate(context.template);
                     view = new TemplateView({ model: model});
-                    
-                    context.extensionsRegion.show(view, "wkhtmltopdf");
+
+                    setTimeout(function() {
+                        context.extensionsRegion.show(view, "wkhtmltopdf");
+                    }, 0);
                 } else {
                     if (view != null)
                         $(view.el).remove();
