@@ -20,14 +20,18 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --reporter spec test"
+    "test": "mocha --timeout=5000 --reporter spec test"
   },
   "dependencies": {
+    "mkdirp": "^0.5.1",
+    "node.extend": "^1.1.5",
     "q": "1.2.0",
-    "toner-wkhtmltopdf" : "0.1.1"
+    "should": "^8.1.1",
+    "uuid": "^2.0.1",
+    "wkhtmltopdf-installer": "^0.2.0"
   },
   "devDependencies": {
-    "jsreport": "0.7.0",
-    "mocha": "2.2.1"
+    "mocha": "2.2.1",
+    "jsreport-core": "*"
   }
 }

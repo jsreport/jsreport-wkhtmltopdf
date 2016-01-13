@@ -1,25 +1,28 @@
-﻿/*globals describe, it, beforeEach, afterEach */
+﻿var path = require("path");
+var Reporter = require("jsreport-core").Reporter;
+require("should");
 
-var assert = require("assert"),
-    fs = require('fs'),
-    path = require("path"),
-    describeReporting = require("jsreport").describeReporting;
+describe("wkhtmltopdf", function () {
+    var reporter;
 
-describeReporting(path.join(__dirname, "../"), ["html", "templates", "wkhtmltopdf"], function (reporter) {
-
-    describe('wkhtmltopdf', function () {
-
-        it('should not fail when rendering', function (done) {
-            var request = {
-                template: {content: "Heyx", recipe: "wkhtmltopdf", engine: "none"},
-                data: null
-            };
-
-            reporter.render(request, {}).then(function (response) {
-                assert.equal(response.content.toString("utf8").indexOf("%PDF") === 0, true);
-                done();
-            }).catch(done);
+    beforeEach(function (done) {
+        reporter = new Reporter({
+            rootDirectory: path.join(__dirname, "../")
         });
 
+        reporter.init().then(function () {
+            done()
+        }).fail(done)
     });
+
+    it("should not fail when rendering", function (done) {
+        var request = {
+            template: {content: "Heyx", recipe: "wkhtmltopdf", engine: "none"}
+        };
+
+        reporter.render(request, {}).then(function (response) {
+            response.content.toString().should.containEql("%PDF");
+            done()
+        }).catch(done)
+    })
 });
