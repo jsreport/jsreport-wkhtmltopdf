@@ -1,0 +1,22 @@
+import React, { Component } from 'react'
+import { TextEditor } from 'jsreport-studio'
+
+export default class DataEditor extends Component {
+  static propTypes = {
+    entity: React.PropTypes.object.isRequired,
+    tab: React.PropTypes.object.isRequired,
+    onUpdate: React.PropTypes.func.isRequired
+  }
+
+  render () {
+    const { entity, onUpdate, tab } = this.props
+
+    return (<TextEditor
+      name={entity._id + '_wk' + tab.headerOrFooter}
+      mode='handlebars'
+      value={entity.wkhtmltopdf ? entity.wkhtmltopdf[tab.headerOrFooter] : ''}
+      onUpdate={(v) => onUpdate(Object.assign({}, entity, { wkhtmltopdf: Object.assign({}, entity.wkhtmltopdf, { [tab.headerOrFooter]: v }) }))}
+      />)
+  }
+}
+

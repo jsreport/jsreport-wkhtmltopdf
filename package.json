@@ -1,6 +1,6 @@
 {
   "name": "jsreport-wkhtmltopdf",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "keywords": [
     "jsreport",
     "wkhtmltopdf",
@@ -20,18 +20,41 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --timeout=10000 --reporter spec test"
+    "test": "mocha --timeout=10000 --reporter spec test && standard",
+    "build": "jsreport-studio-build",
+    "prepublish": "in-publish && jsreport-studio-build || not-in-publish"
+  },
+  "standard": {
+    "ignore": [
+      "main.js"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "mocha": true,
+      "browser": true
+    }
   },
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "node.extend": "^1.1.5",
-    "q": "1.2.0",
-    "should": "^8.1.1",
-    "uuid": "^2.0.1",
-    "wkhtmltopdf-installer": "^0.2.0"
+    "in-publish": "2.0.0",
+    "mkdirp": "0.5.1",
+    "node.extend": "1.1.5",
+    "q": "1.4.1",
+    "uuid": "2.0.2",
+    "wkhtmltopdf-installer": "0.2.0"
   },
   "devDependencies": {
-    "mocha": "2.2.1",
-    "jsreport-core": "*"
-  }
+    "babel-eslint": "6.0.4",
+    "eslint": "2.11.1",
+    "eslint-config-standard-jsx": "1.2.1",
+    "eslint-plugin-babel": "3.2.0",
+    "jsreport-core": "*",
+    "jsreport-studio-dev": "0.3.0",
+    "mocha": "2.5.3",
+    "should": "9.0.2",
+    "standard": "7.1.2"
+  },
+  "files": [
+    "lib", "index.js", "jsreport.config.js", "studio"
+  ]
 }
