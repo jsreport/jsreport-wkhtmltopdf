@@ -81,7 +81,7 @@ export default class Properties extends Component {
           <label>Header</label>
           <button onClick={() => this.openHeaderFooter('header')}>open in tab...</button>
         </div>
-        <div className='form-group'><label>Header height in mm</label>
+        <div className='form-group'><label>Footer height in mm</label>
           <input
             type='text' placeholder='10' value={wkhtmltopdf.footerHeight || ''}
             onChange={(v) => changeWK({footerHeight: v.target.value})} />

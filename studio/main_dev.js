@@ -6,7 +6,17 @@ import Studio from 'jsreport-studio'
 
 Studio.addPropertiesComponent('wkhtmltopdf', Properties, (entity) => entity.__entitySet === 'templates' && entity.recipe === 'wkhtmltopdf')
 
-Studio.addEditorComponent(Constants.WK_TAB_EDITOR, WKEditor)
+const reformat = (reformatter, entity, tab) => {
+  const reformated = reformatter(entity.wkhtmltopdf[tab.headerOrFooter], 'html')
+
+  return {
+    wkhtmltopdf: {
+      [tab.headerOrFooter]: reformated
+    }
+  }
+}
+
+Studio.addEditorComponent(Constants.WK_TAB_EDITOR, WKEditor, reformat)
 Studio.addTabTitleComponent(Constants.WK_TAB_TITLE, WKTitle)
 
 Studio.addApiSpec({
