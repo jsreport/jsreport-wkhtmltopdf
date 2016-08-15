@@ -41,7 +41,7 @@
     "node.extend": "1.1.5",
     "q": "1.4.1",
     "uuid": "2.0.2",
-    "wkhtmltopdf-installer": "0.2.0"
+    "wkhtmltopdf-installer": "0.3.0"
   },
   "devDependencies": {
     "babel-eslint": "6.0.4",

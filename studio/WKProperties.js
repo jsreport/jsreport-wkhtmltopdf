@@ -115,6 +115,11 @@ export default class Properties extends Component {
             type='text' placeholder='10mm' value={wkhtmltopdf.tocLevelIndentation || ''}
             onChange={(v) => changeWK({tocLevelIndentation: v.target.value})} />
         </div>
+        <div className='form-group'><label>Keep relative links</label>
+          <input
+            type='checkbox' checked={wkhtmltopdf.keepRelativeLinks === true}
+            onChange={(v) => changeWK({keepRelativeLinks: v.target.checked})} />
+        </div>
       </div>
     )
   }
