@@ -19,8 +19,15 @@ export default class Properties extends Component {
 
     const changeWK = (change) => onChange(Object.assign({}, entity, { wkhtmltopdf: Object.assign({}, entity.wkhtmltopdf, change) }))
 
+    const wkhtmltopdfVersions = Studio.extensions['wkhtmltopdf'].options.wkhtmltopdfVersions
+
     return (
       <div className='properties-section'>
+        <div className='form-group'><label>wkhtmltopdf version</label>
+          <select value={wkhtmltopdf.wkhtmltopdfVersion || wkhtmltopdfVersions[0].version} onChange={(v) => changeWK({wkhtmltopdfVersion: v.target.value})}>
+            {wkhtmltopdfVersions.map((p) => <option key={p.version} value={p.version}>{p.version}</option>)}
+          </select>
+        </div>
         <div className='form-group'><label>Metadata - title</label>
           <input
             type='text' placeholder='document title' value={wkhtmltopdf.title || ''}
