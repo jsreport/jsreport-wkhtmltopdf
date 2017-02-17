@@ -25,8 +25,8 @@ Accessing local files from withing html templates is disabled by default. To ena
 ```js
 "wkhtmltopdf": {
 	"allowLocalFilesAccess": true,
-  "proxy": "url"
-  ...any other option supported by wkhtmltopdf
+  "proxy": "url",
+  "any other option supported by wkhtmltopdf": true || "value"
 },
 ```
 
