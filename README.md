@@ -19,24 +19,7 @@ To use `recipe` in for template rendering set `template.recipe=phantom-wkhtmltop
 }
 ```
 
-##Local file access
-Accessing local files from withing html templates is disabled by default. To enable it set `wkhtmltopdf.allowLocalFilesAccess: true` in the config
-
-```js
-"wkhtmltopdf": {
-	"allowLocalFilesAccess": true
-},
-```
-
-##wkhtmltopdf executable options
-You can also set wkhtmltopdf proxy or pass other options supported by wkhtmltopdf
-```js
-"wkhtmltopdf": {
-  "proxy": "url",
-  "any other option supported by wkhtmltopdf": true || "value"
-},
-```
-
+See the docs http://jsreport.net/learn/wkhtmltopdf
 
 ##jsreport-core
 You can apply this extension also manually to [jsreport-core](https://github.com/jsreport/jsreport-core)
