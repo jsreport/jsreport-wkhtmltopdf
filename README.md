@@ -30,6 +30,15 @@ Accessing local files from withing html templates is disabled by default. To ena
 },
 ```
 
+##wkhtmltopdf executable options
+You can also set wkhtmltopdf proxy or pass other options supported by wkhtmltopdf
+```js
+"wkhtmltopdf": {
+  "proxy": "url",
+  "any other option supported by wkhtmltopdf": true || "value"
+},
+```
+
 
 ##jsreport-core
 You can apply this extension also manually to [jsreport-core](https://github.com/jsreport/jsreport-core)
