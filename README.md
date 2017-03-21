@@ -4,13 +4,13 @@
 [![License](http://img.shields.io/npm/l/jsreport-wkhtmltopdf.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.org/jsreport/jsreport-wkhtmltopdf.png?branch=master)](https://travis-ci.org/jsreport/jsreport-wkhtmltopdf)
 
-[jsreport](http://jsreport.net) recipe for rendering pdf using [wkhtmltopdf](http://wkhtmltopdf.org)
+[jsreport](https://jsreport.net) recipe for rendering pdf using [wkhtmltopdf](http://wkhtmltopdf.org)
 
-##Installation
+## Installation
 
 > **npm install jsreport-wkhtmltopdf**
 
-##Usage
+## Usage
 To use `recipe` in for template rendering set `template.recipe=phantom-wkhtmltopdf` in the rendering request.
 
 ```js
@@ -19,9 +19,9 @@ To use `recipe` in for template rendering set `template.recipe=phantom-wkhtmltop
 }
 ```
 
-See the docs http://jsreport.net/learn/wkhtmltopdf
+See the docs https://jsreport.net/learn/wkhtmltopdf
 
-##jsreport-core
+## jsreport-core
 You can apply this extension also manually to [jsreport-core](https://github.com/jsreport/jsreport-core)
 
 ```js
