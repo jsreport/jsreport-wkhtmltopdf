@@ -27,6 +27,7 @@ Studio.addApiSpec({
       footer: '...',
       headerHeight: '...',
       footerHeight: '...',
+      dpi: '...',
       marginBottom: '...',
       marginLeft: '...',
       marginRight: '...',
@@ -37,7 +38,11 @@ Studio.addApiSpec({
       toc: '...',
       tocHeaderText: '...',
       tocLevelIndentation: '...',
-      tocTextSizeShrink: '...'
+      tocTextSizeShrink: '...',
+      javascriptDelay: '...',
+      windowStatus: '...',
+      disableSmartShrinking: '...',
+      printMediaType: '...'
     }
   }
 })
