@@ -146,12 +146,12 @@ export default class Properties extends Component {
           <input
             type='text' placeholder='200' value={wkhtmltopdf.javascriptDelay || ''}
             onChange={(v) => changeWK({javascriptDelay: v.target.value})} />
-        </div> 
+        </div>
         <div className='form-group'><label>Window Status</label>
           <input
             type='text' value={wkhtmltopdf.windowStatus || ''}
             onChange={(v) => changeWK({windowStatus: v.target.value})} />
-        </div>                          
+        </div>
       </div>
     )
   }
