@@ -59,6 +59,11 @@ export default class Properties extends Component {
             <option key='landscape' value='landscape'>Landscape</option>
           </select>
         </div>
+        <div className='form-group'><label>Dpi</label>
+          <input
+            type='text' placeholder='96' value={wkhtmltopdf.dpi || ''}
+            onChange={(v) => changeWK({dpi: v.target.value})} />
+        </div>
         <div className='form-group'><label>Margin bottom</label>
           <input
             type='text' placeholder='10mm' value={wkhtmltopdf.marginBottom || ''}
@@ -126,6 +131,26 @@ export default class Properties extends Component {
           <input
             type='checkbox' checked={wkhtmltopdf.keepRelativeLinks === true}
             onChange={(v) => changeWK({keepRelativeLinks: v.target.checked})} />
+        </div>
+        <div className='form-group'><label>Disable smart shrinking</label>
+          <input
+            type='checkbox' checked={wkhtmltopdf.disableSmartShrinking === true}
+            onChange={(v) => changeWK({disableSmartShrinking: v.target.checked})} />
+        </div>
+        <div className='form-group'><label>Print media type</label>
+          <input
+            type='checkbox' checked={wkhtmltopdf.printMediaType === true}
+            onChange={(v) => changeWK({printMediaType: v.target.checked})} />
+        </div>
+        <div className='form-group'><label>Javascript Delay</label>
+          <input
+            type='text' placeholder='200' value={wkhtmltopdf.javascriptDelay || ''}
+            onChange={(v) => changeWK({javascriptDelay: v.target.value})} />
+        </div>
+        <div className='form-group'><label>Window Status</label>
+          <input
+            type='text' value={wkhtmltopdf.windowStatus || ''}
+            onChange={(v) => changeWK({windowStatus: v.target.value})} />
         </div>
       </div>
     )
