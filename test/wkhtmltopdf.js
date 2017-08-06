@@ -97,3 +97,55 @@ describe('wkhtmltopdf with proxy', function () {
   })
 })
 
+describe('wkhtmltopdf with execOpptions.maxBuffer = 1', function () {
+  var reporter
+
+  beforeEach(function () {
+    reporter = jsreport()
+    reporter.use(debug())
+    reporter.use(wkhtmltopdf({
+      execOptions: {
+        maxBuffer: 1
+      }
+    }))
+
+    return reporter.init()
+  })
+
+  it('should fail because of max buffer acceeded', function (done) {
+    var request = {
+      template: { content: 'foo', recipe: 'wkhtmltopdf', engine: 'none' }
+    }
+
+    reporter.render(request, {}).then(function (response) {
+      done(new Error('Should have fail'))
+    }).catch(function () {
+      done()
+    })
+  })
+})
+
+describe('wkhtmltopdf with execOpptions.maxBuffer = 1000 * 100', function () {
+  var reporter
+
+  beforeEach(function () {
+    reporter = jsreport()
+    reporter.use(debug())
+    reporter.use(wkhtmltopdf({
+      execOptions: {
+        maxBuffer: 1000 * 100
+      }
+    }))
+
+    return reporter.init()
+  })
+
+  it('should work', function () {
+    var request = {
+      template: { content: 'foo', recipe: 'wkhtmltopdf', engine: 'none' }
+    }
+
+    return reporter.render(request, {})
+  })
+})
+
