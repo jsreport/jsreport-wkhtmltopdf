@@ -148,4 +148,3 @@ describe('wkhtmltopdf with execOpptions.maxBuffer = 1000 * 100', function () {
     return reporter.render(request, {})
   })
 })
-

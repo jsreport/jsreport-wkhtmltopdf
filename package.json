@@ -22,6 +22,7 @@
   "scripts": {
     "start": "jsreport-studio-start --httpPort 5488",
     "test": "mocha --timeout=10000 --reporter spec test && standard",
+    "lint": "standard",
     "build": "jsreport-studio-build",
     "prepublish": "in-publish && jsreport-studio-build || not-in-publish"
   },
