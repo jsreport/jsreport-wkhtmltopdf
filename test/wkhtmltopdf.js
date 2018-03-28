@@ -20,7 +20,7 @@ describe('wkhtmltopdf', function () {
       template: { content: 'Heyx', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    return reporter.render(request, {}).then(function (response) {
+    return reporter.render(request).then(function (response) {
       response.content.toString().should.containEql('%PDF')
     })
   })
@@ -31,7 +31,7 @@ describe('wkhtmltopdf', function () {
       template: { content: '<img src="' + localFile + '"/>', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    reporter.render(request).then(function (response) {
       done('Should have failed')
     }).catch(function () {
       done()
@@ -43,8 +43,8 @@ describe('wkhtmltopdf', function () {
       template: { content: 'Heyx<script>console.log("aaa")</script>', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    return reporter.render(request, {}).then(function (response) {
-      JSON.stringify(response.logs).should.containEql('aaa')
+    return reporter.render(request).then(function (response) {
+      response.meta.logs.map(l => l.message).should.matchAny(/aaa/)
     })
   })
 })
@@ -67,7 +67,7 @@ describe('wkhtmltopdf with local', function () {
       template: { content: '<img src="' + localFile + '"/>', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    return reporter.render(request, {}).then(function (response) {
+    return reporter.render(request).then(function (response) {
       response.content.toString().should.containEql('%PDF')
     })
   })
@@ -91,8 +91,8 @@ describe('wkhtmltopdf with proxy', function () {
       template: { content: 'foo', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    return reporter.render(request, {}).then(function (response) {
-      JSON.stringify(response.logs).should.containEql('--proxy foo')
+    return reporter.render(request).then(function (response) {
+      response.meta.logs.map(l => l.message).should.matchAny(/--proxy foo/)
     })
   })
 })
@@ -117,7 +117,7 @@ describe('wkhtmltopdf with execOpptions.maxBuffer = 1', function () {
       template: { content: 'foo', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    reporter.render(request).then(function (response) {
       done(new Error('Should have fail'))
     }).catch(function () {
       done()
@@ -145,6 +145,6 @@ describe('wkhtmltopdf with execOpptions.maxBuffer = 1000 * 100', function () {
       template: { content: 'foo', recipe: 'wkhtmltopdf', engine: 'none' }
     }
 
-    return reporter.render(request, {})
+    return reporter.render(request)
   })
 })
