@@ -52,7 +52,7 @@
     "eslint-config-standard-jsx": "5.0.0",
     "eslint-plugin-babel": "4.1.2",
     "in-publish": "2.0.0",
-    "jsreport-core": "2.4.1",
+    "jsreport-core": "github:jsreport/jsreport-core",
     "jsreport-debug": "2.0.2",
     "jsreport-studio-dev": "1.3.2",
     "mocha": "5.0.5",
