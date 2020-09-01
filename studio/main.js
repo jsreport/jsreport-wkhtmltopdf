@@ -120,11 +120,11 @@ var _WKEditor = __webpack_require__(4);
 
 var _WKEditor2 = _interopRequireDefault(_WKEditor);
 
-var _WKProperties = __webpack_require__(6);
+var _WKProperties = __webpack_require__(5);
 
 var _WKProperties2 = _interopRequireDefault(_WKProperties);
 
-var _WKTitle = __webpack_require__(7);
+var _WKTitle = __webpack_require__(6);
 
 var _WKTitle2 = _interopRequireDefault(_WKTitle);
 
@@ -198,10 +198,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _propTypes = __webpack_require__(5);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -218,16 +214,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DataEditor = function (_Component) {
-  _inherits(DataEditor, _Component);
+var WKEditor = function (_Component) {
+  _inherits(WKEditor, _Component);
 
-  function DataEditor() {
-    _classCallCheck(this, DataEditor);
+  function WKEditor() {
+    _classCallCheck(this, WKEditor);
 
-    return _possibleConstructorReturn(this, (DataEditor.__proto__ || Object.getPrototypeOf(DataEditor)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (WKEditor.__proto__ || Object.getPrototypeOf(WKEditor)).apply(this, arguments));
   }
 
-  _createClass(DataEditor, [{
+  _createClass(WKEditor, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -247,26 +243,13 @@ var DataEditor = function (_Component) {
     }
   }]);
 
-  return DataEditor;
+  return WKEditor;
 }(_react.Component);
 
-exports.default = DataEditor;
-
-
-DataEditor.propTypes = {
-  entity: _propTypes2.default.object.isRequired,
-  tab: _propTypes2.default.object.isRequired,
-  onUpdate: _propTypes2.default.func.isRequired
-};
+exports.default = WKEditor;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = Studio.libraries['prop-types'];
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -756,7 +739,7 @@ var Properties = function (_Component) {
 exports.default = Properties;
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
